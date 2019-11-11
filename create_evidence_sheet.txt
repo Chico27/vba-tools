@@ -1,0 +1,26 @@
+Sub ADD_TEST_SHEET()
+   Worksheets(1).Select
+   maxNo = Range("D3").Value
+   Dim i As Long
+   For i = 1 To maxNo
+       CREATE_SHEET (i)
+   Next i
+   Worksheets(1).Select
+End Sub
+
+
+Sub CREATE_SHEET(i)
+   Worksheets.Add after:=Worksheets(Worksheets.Count)
+   ct = i & 0
+   ActiveSheet.Name = Format(ct, "000")
+End Sub
+
+Sub ALL_DELETE()
+   Dim i As Long
+   Application.DisplayAlerts = False
+   For i = 2 To Worksheets.Count
+   Application.DisplayAlerts = False
+       Worksheets(2).Delete
+   Next i
+   Application.DisplayAlerts = True
+End Sub
