@@ -1,0 +1,15 @@
+
+Sub FORMALIZE()
+ Dim i As Integer
+
+ For i = 1 To ThisWorkbook.Worksheets.Count
+   Worksheets(i).Activate
+   ActiveWindow.Zoom = 100
+   Worksheets(i).Range("A1").Select
+
+ Next
+
+ Worksheets(1).Activate
+ Worksheets(1).Range("A1").Select
+
+End Sub
